@@ -1,37 +1,43 @@
 import java.util.Scanner;
 
-public class Lesson02Input{
-    public static void main (String[] args) {
-        // Input - Scanner 
+public class Lesson02Input {
+
+    public static void main(String[] args) {
+
+        // Create a Scanner object for keyboard input
         Scanner input = new Scanner(System.in);
+
 
         // Input - Integer
         System.out.print("Enter your age: ");
-        int userAge = input.nextInt();
+        int age = input.nextInt();
 
-        System.out.println("Your age is: " + userAge);
+        System.out.println("Your age is: " + age);
+
 
         /*
-
-        Scanner method    Return type
-        nextInt()       → int
-        nextDouble()    → double
-        nextFloat()     → float
-        nextLong()      → long
-        nextBoolean()   → boolean
+        
+        Scanner Method     Return Type
+        --------------------------------
+        nextInt()          int
+        nextDouble()       double
+        nextFloat()        float
+        nextLong()         long
+        nextBoolean()      boolean
+        next()             String
+        nextLine()         String
 
         */
 
 
-        // Input - double
+        // Input - Double
         System.out.print("Enter your CGPA: ");
         double cgpa = input.nextDouble();
 
         System.out.println("Your CGPA: " + cgpa);
 
 
-        // Input - Others Data types
-
+        // Input - Other data types
         System.out.print("Enter price: ");
         float price = input.nextFloat();
 
@@ -45,69 +51,36 @@ public class Lesson02Input{
         System.out.println("Population: " + population);
         System.out.println("Active: " + active);
 
-        
 
         // Input - String using next()
-        // next() -> reads only one word/token
+        // next() reads only one token
+        System.out.print("Enter your nickname: ");
+        String nickname = input.next();
 
-        System.out.print("Enter your Nickname: ");
-        String name =  input.next();
-        System.out.println("Name : " + name);
+        System.out.println("Nickname: " + nickname);
 
-        // Consume the Leftover newline after next()
+
+        // Consume the leftover newline before using nextLine()
         input.nextLine();
 
 
         // Input - String using nextLine()
-        // nextLine() -> reads the full line
-
+        // nextLine() reads the remaining/full line
         System.out.print("Enter your full name: ");
         String fullName = input.nextLine();
+
         System.out.println("Full Name: " + fullName);
 
 
         // Input - Character
+        // Scanner has no nextChar(), so read a String and take its first character
         System.out.print("Enter your grade: ");
         char grade = input.next().charAt(0);
+
         System.out.println("Grade: " + grade);
 
 
-
-        /*
-        
-        | Escape sequence | Work                |
-        | --------------- | ------------------ |
-        | `\n`            | New line           |
-        | `\t`            | Tab                |
-        | `\"`            | Double quote print |
-        | `\'`            | Single quote       |
-        | `\\`            | Backslash print    |
-
-        */
-
-        // Using Escape sequence
-        System.out.println("\n--- Escape Sequence Example ---");
-        System.out.println("Java\nOOP");
-        System.out.println("Name\tAge");
-        System.out.println("He said \"Hello\"");
-        System.out.println("C:\\Users\\Mamun");
-
-        // Formatted Output using printf()
-        System.out.println("\n--- Formatted Output ---");
-
-        System.out.printf("Age: %d%n", userAge);
-        System.out.printf("CGPA: %.2f%n", cgpa);
-        System.out.printf("Nickname: %s%n", name);
-        System.out.printf("Full Name: %s%n", fullName);
-        System.out.printf("Grade: %c%n", grade);
-        System.out.printf("Active: %b%n", active);
-
-        // Print multiple variables
-        System.out.printf(
-            "Name: %s, Age: %d, CGPA: %.2f%n",
-            name, userAge, cgpa
-        );
-
+        // Close the Scanner after all input operations are finished
         input.close();
     }
 }
