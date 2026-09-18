@@ -71,6 +71,43 @@ public class Lesson02Input{
         char grade = input.next().charAt(0);
         System.out.println("Grade: " + grade);
 
+
+
+        /*
+        
+        | Escape sequence | Work                |
+        | --------------- | ------------------ |
+        | `\n`            | New line           |
+        | `\t`            | Tab                |
+        | `\"`            | Double quote print |
+        | `\'`            | Single quote       |
+        | `\\`            | Backslash print    |
+
+        */
+
+        // Using Escape sequence
+        System.out.println("\n--- Escape Sequence Example ---");
+        System.out.println("Java\nOOP");
+        System.out.println("Name\tAge");
+        System.out.println("He said \"Hello\"");
+        System.out.println("C:\\Users\\Mamun");
+
+        // Formatted Output using printf()
+        System.out.println("\n--- Formatted Output ---");
+
+        System.out.printf("Age: %d%n", userAge);
+        System.out.printf("CGPA: %.2f%n", cgpa);
+        System.out.printf("Nickname: %s%n", name);
+        System.out.printf("Full Name: %s%n", fullName);
+        System.out.printf("Grade: %c%n", grade);
+        System.out.printf("Active: %b%n", active);
+
+        // Print multiple variables
+        System.out.printf(
+            "Name: %s, Age: %d, CGPA: %.2f%n",
+            name, userAge, cgpa
+        );
+
         input.close();
     }
 }
