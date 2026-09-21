@@ -5,3 +5,6 @@ out/
 
 # VS Code workspace settings
 .vscode/
+
+# Ignore test folder
+test/
